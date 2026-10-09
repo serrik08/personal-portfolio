@@ -88,9 +88,9 @@ Applies to specifications, plans, implementation, and operations. Demonstrate en
 - **P-PROC-01 — Use approval gates for significant changes and a light workflow for routine fixes.**
   Reason: Approval keeps substantial work aligned without burdening routine maintenance.
   Verify: Approve the spec first, then the plan and task list together before implementation; validate against acceptance criteria. Small low-risk fixes need no full spec. Treat AI output as proposals and keep changes within approved scope.
-- **P-PROC-02 — Keep branches and commits focused and traceable.**
-  Reason: Focused history makes changes easier to understand.
-  Verify: Use one branch per feature or substantial spec, keep `main` deployable, and use Conventional Commits with spec/task IDs when applicable; use PRs for meaningful application, security, architecture, and deployment changes.
+- **P-PROC-02 — All development changes must be made on task branches based on the latest `main` and integrated through pull requests targeting `main`.**
+  Reason: Protect `main` and keep each task reviewable and traceable.
+  Verify: Fetch `origin/main` before branching, run relevant checks before opening a PR, and wait for explicit user authorization before merging.
 - **P-PROC-03 — Record significant decisions in ADRs.**
   Reason: Important trade-offs should remain visible.
   Verify: ADRs in `docs/adr/NNNN-title.md` document context, decision, alternatives, consequences, and status; mark superseded decisions.
